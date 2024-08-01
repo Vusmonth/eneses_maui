@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:enesens_mobile.Models"
+             x:Class="enesens_mobile.Pages.Dashboard">
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView x:Name="Collection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:CompanyMetric">
+                        <Border Padding="0,10">
+                            <Grid RowDefinitions="*,*,*"
+                                  ColumnDefinitions="*,6*,*"
+                                  Padding="16,0">
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       FontSize="18"
+                                       FontAttributes="Bold"
+                                       FontFamily=""
+                                       Text="{Binding uid}" />
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       FontFamily=""
+                                       Text="{Binding companyName}" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding unitName}" />
+                                <Label Grid.Row="2"
+                                       Grid.Column="1"
+                                       Text="{Binding gasName}" />
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="2"
+                                       Text="online" />
+
+                            </Grid>
+                        </Border>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

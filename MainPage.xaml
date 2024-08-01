@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="enesens_mobile.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Entry Placeholder="Email"
+                   x:Name="EmailEntry"
+                   Keyboard="Email"
+                   Text="{Binding Email}" />
+
+            <Entry Placeholder="Senha"
+                   x:Name="PasswordEntry"
+                   IsPassword="True"
+                   Text="{Binding Password}" />
+
+            <ActivityIndicator IsRunning="True"
+                               IsVisible="False"
+                               x:Name="Indicator"
+                               Scale="1.2" />
+
+            <Button x:Name="LoginBtn"
+                    Text="Entrar"
+                    Clicked="HandleLogin"
+                    HorizontalOptions="Fill" />
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
